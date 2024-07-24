@@ -1,0 +1,17 @@
+syntax = "proto3";
+package pb.category;
+
+option go_package = "pb/category";
+
+message Category {
+    int64 id = 1;
+    string name = 2;
+}
+
+message FindCategoryByIDRequest {
+    int64 id = 1;
+}
+
+service CategoryService {
+    rpc FindCategoryByID(FindCategoryByIDRequest) returns (Category);
+}
